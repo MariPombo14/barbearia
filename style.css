@@ -1,0 +1,190 @@
+
+:root {
+    --fundo-site: #121212;       /* O cinza grafite escuro das imagens de referência */
+    --fundo-cards: #1a1a1a;      /* Tom levemente mais claro para os cards se destacarem */
+    --dourado: #d4a037;          /* Dourado fosco elegante */
+    --branco: #ffffff;
+    --cinza-texto: #cccccc;
+    --preto-puro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* APLICAÇÃO DO CINZA NO CORPO DO SITE */
+body {
+    background-color: var(--fundo-site);
+    color: var(--branco);
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.logo img { height: 50px; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--dourado); }
+
+/* HERO / BANNER */
+#banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(40%); /* Escurece a imagem para o texto brilhar */
+}
+
+.banner-content { text-align: center; }
+.banner-content h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; }
+.banner-content p { font-size: 1.2rem; color: var(--cinza-texto); }
+
+/* ESTILIZAÇÃO DAS SEÇÕES COM O CINZA GRAFITE */
+.section {
+    padding: 100px 10%;
+    background-color: var(--fundo-site); /* Aplica a cor desejada aqui */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--dourado);
+    margin: 0 auto 50px;
+}
+
+.historia-text {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: var(--cinza-texto);
+}
+
+/* CARDS DE SERVIÇOS E DIFERENCIAIS */
+.cards, .galeria-ambiente {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card, .ambiente-item {
+    background: var(--fundo-cards); /* Cards um tom acima do fundo */
+    border-radius: 12px;
+    width: 280px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid #252525; /* Borda sutil para definição */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card img, .ambiente-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content, .ambiente-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-content i { font-size: 1.5rem; color: var(--dourado); margin-bottom: 15px; }
+.card-content h3, .ambiente-info h3 { margin-bottom: 10px; font-size: 1.2rem; }
+.card-content p, .ambiente-info p { color: var(--cinza-texto); font-size: 0.9rem; }
+
+.card:hover, .ambiente-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--dourado);
+}
+
+/* CTA (BOTÃO WHATSAPP) */
+.cta {
+    background-color: var(--fundo-cards);
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.cta h2 { font-size: 2rem; margin-bottom: 15px; font-weight: 900; }
+.cta p { margin-bottom: 35px; color: var(--cinza-texto); }
+
+.cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--dourado);
+    color: var(--preto-puro);
+    padding: 18px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.cta a:hover {
+    background-color: #bc8f2f;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--preto-puro);
+    padding: 60px 10%;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+}
+
+footer h3 { color: var(--dourado); margin-bottom: 20px; }
+footer p { color: var(--cinza-texto); margin-bottom: 10px; font-size: 0.9rem; }
+.copy { margin-top: 30px; font-size: 0.8rem; opacity: 0.4; }
+
+/* AJUSTES PARA CELULAR */
+@media (max-width: 768px) {
+    header { padding: 15px 5%; }
+    nav ul { display: none; } /* Pode ser trocado por um menu hambúrguer depois */
+    .banner-content h1 { font-size: 2.2rem; }
+    .card { width: 100%; }
+}
